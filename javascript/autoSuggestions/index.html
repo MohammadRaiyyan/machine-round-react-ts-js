@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>Auto Suggestions</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .suggestion-container {
+        position: relative;
+        width: 500px;
+      }
+      .suggestion-menu {
+        visibility: hidden;
+        opacity: 0;
+        width: 100%;
+        min-height: 200px;
+        max-height: 400px;
+        overflow-y: auto;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        border: 1px solid #c3d4da;
+        background-color: #fff;
+        border-radius: 10px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        transition: all 03ms ease-in-out;
+      }
+      .suggestion-menu.open {
+        visibility: visible;
+        opacity: 1;
+      }
+      .suggestion-input {
+        height: 30px;
+        display: flex;
+        align-items: center;
+        border: 1px solid #ced4da;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        width: 100%;
+      }
+      .suggestion-menu__item {
+        list-style-type: none;
+        margin: 0;
+        padding: 10px 20px;
+        font-weight: 500;
+        height: 38px;
+      }
+      .suggestion-menu__item:hover {
+        background-color: #f0f0f0;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="suggestion-container">
+      <input
+        type="text"
+        class="suggestion-input"
+        placeholder="Search..."
+        id="suggestion-input"
+      />
+      <ul class="suggestion-menu" id="suggestion-menu"></ul>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
