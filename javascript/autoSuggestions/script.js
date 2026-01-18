@@ -21,7 +21,7 @@ On click of suggestion populate the input box with the suggestion value and focu
   /*
 Fetch and process search 
 */
-  const handleInputChange = debounce(process, 500);
+  const handleInputChange = debounce(fetchProcessSuggestions, 500);
 
   input.addEventListener("input", async (e) => {
     const value = e.target.value;
@@ -38,7 +38,7 @@ Onclick on an item populate the input and refocus the input field
     }
   });
 
-  async function process(value) {
+  async function fetchProcessSuggestions(value) {
     if (value) {
       const products = await fetchSuggestions(value);
       const items = [];
