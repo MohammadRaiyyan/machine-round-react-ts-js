@@ -1,10 +1,10 @@
 import "./App.css";
-import UseDebounceHookDemo from "./components/useDebounce";
+import WhyUpdated from "./components/WhyUpdatedExample";
 
 function App() {
   return (
     <div>
-      <UseDebounceHookDemo />
+      <WhyUpdated />
     </div>
   );
 }

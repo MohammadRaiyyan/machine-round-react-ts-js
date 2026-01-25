@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from "react";
-import { Store } from "./store";
+import { Store } from "../store";
 import type { FormState } from "./types";
 
 export default function useFormStore<T>(initialValues: T) {
