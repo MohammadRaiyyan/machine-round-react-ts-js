@@ -1,0 +1,31 @@
+.folder-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.box {
+  padding: 10px;
+  width: 100px;
+  height: 100px;
+}
+.folder {
+  background-color: green;
+  cursor: pointer;
+}
+.file {
+  background-color: yellow;
+}
+.breadcrumbs {
+  background-color: red;
+  padding: 10px;
+  color: white;
+  width: max-content;
+}
+.breadcrumb {
+  cursor: pointer;
+}
+.breadcrumb[data-active="true"] {
+  pointer-events: none;
+  opacity: 50;
+  color: rgb(181, 179, 179);
+}

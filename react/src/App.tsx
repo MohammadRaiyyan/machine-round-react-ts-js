@@ -1,10 +1,10 @@
 import "./App.css";
-import WhyUpdated from "./components/WhyUpdatedExample";
+import NestedGoogleDriveFolder from "./components/NestedGoogleDriveFolder";
 
 function App() {
   return (
     <div>
-      <WhyUpdated />
+      <NestedGoogleDriveFolder />
     </div>
   );
 }
