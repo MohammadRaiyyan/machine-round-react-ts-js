@@ -1,10 +1,10 @@
 import "./App.css";
-import OTP from "./components/OTP";
+import Example from "./components/Popover/Example";
 
 function App() {
   return (
-    <div>
-      <OTP />
+    <div className="App">
+      <Example />
     </div>
   );
 }
