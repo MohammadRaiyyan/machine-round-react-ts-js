@@ -1,4 +1,4 @@
-import { useRef, useState, type KeyboardEvent } from "react";
+import { useRef, useState, type ChangeEvent, type KeyboardEvent } from "react";
 import "./style.css";
 interface OTPProps {
   length?: number;
@@ -12,12 +12,14 @@ export default function OTP({ length = 6 }: OTPProps) {
 
   const handleKeyDown = (e: KeyboardEvent, index: number) => {
     const key = e.key;
-
     if (key === "Backspace") {
-      const copiedFields = [...fields];
-      copiedFields[index] = "";
-      setFields(copiedFields);
-      inputRefs.current[index - 1]?.focus();
+      if (fields[index]) {
+        const copiedFields = [...fields];
+        copiedFields[index] = "";
+        setFields(copiedFields);
+      } else {
+        inputRefs.current[index - 1]?.focus();
+      }
       return;
     }
     if (key === "ArrowLeft") {
@@ -28,14 +30,16 @@ export default function OTP({ length = 6 }: OTPProps) {
       inputRefs.current[index + 1]?.focus();
       return;
     }
-    if (isNaN(Number(key))) {
-      return;
-    }
+  };
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>, index: number) => {
+    const val = e.target.value.replace(/[^0-9]/g, "").slice(0, 1);
     const copiedFields = [...fields];
-    copiedFields[index] = key;
+    copiedFields[index] = val;
     setFields(copiedFields);
-    inputRefs.current[index + 1]?.focus();
+    if (val && index < fields.length - 1) {
+      inputRefs.current[index + 1]?.focus();
+    }
   };
   return (
     <div className="container">
@@ -55,6 +59,7 @@ export default function OTP({ length = 6 }: OTPProps) {
                 inputRefs.current[index] = element;
               }}
               onKeyDown={(e) => handleKeyDown(e, index)}
+              onChange={(e) => handleChange(e, index)}
               aria-label={`input-${index + 1}`}
             />
           ))}
