@@ -55,6 +55,7 @@ export default function OTP({ length = 6 }: OTPProps) {
               type="text"
               value={field}
               key={index}
+              autoFocus={index === 0}
               ref={(element) => {
                 inputRefs.current[index] = element;
               }}
