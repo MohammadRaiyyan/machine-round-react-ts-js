@@ -1,10 +1,10 @@
 import "./App.css";
-import Example from "./components/Popover/Example";
+import TicTacToe from "./components/Tic-tac-toe";
 
 function App() {
   return (
     <div className="App">
-      <Example />
+      <TicTacToe />
     </div>
   );
 }
