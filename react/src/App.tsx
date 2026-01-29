@@ -1,10 +1,10 @@
 import "./App.css";
-import WithObserver from "./components/InfiniteScroll/WithObserver";
+import SortableList from "./components/SortableList";
 
 function App() {
   return (
     <div className="App">
-      <WithObserver />
+      <SortableList />
     </div>
   );
 }
