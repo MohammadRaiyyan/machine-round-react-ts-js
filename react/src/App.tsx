@@ -1,10 +1,10 @@
 import "./App.css";
-import TicTacToe from "./components/Tic-tac-toe";
+import WithObserver from "./components/InfiniteScroll/WithObserver";
 
 function App() {
   return (
     <div className="App">
-      <TicTacToe />
+      <WithObserver />
     </div>
   );
 }
