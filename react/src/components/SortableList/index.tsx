@@ -23,6 +23,11 @@ function SortableList() {
               marginBottom: "2px",
               cursor: "grab",
             }}
+            onDrop={(e) => {
+              if (i !== startIndex) {
+                // swap
+              }
+            }}
             key={i}
           >
             {i + 1}
