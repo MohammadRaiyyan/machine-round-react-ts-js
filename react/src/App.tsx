@@ -1,10 +1,10 @@
 import "./App.css";
-import SortableList from "./components/SortableList";
+import SearchWithPagination from "./components/SearchWithPagination";
 
 function App() {
   return (
     <div className="App">
-      <SortableList />
+      <SearchWithPagination />
     </div>
   );
 }
